@@ -1,0 +1,22 @@
+{
+  "name": "XVersion",
+  "version": "0.1.0",
+  "summary": "版本控制",
+  "description": "用于版本比较等功能",
+  "homepage": "https://github.com/Tyrant/XVersion",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Tyrant": "ray_wzc@163.com"
+  },
+  "source": {
+    "git": "git@114.242.31.175:wangzhichen/XVersion.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "XVersion/Classes/**/*"
+}

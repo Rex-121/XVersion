@@ -13,16 +13,62 @@ class Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+   func testEmpty() {
+        
+        let zero = Version.empty
+        
+        assert(zero.major == 0)
+        assert(zero.minor == 0)
+        assert(zero.patch == 0)
+        
+        assert(zero == "0.0.0")
+        assert(zero == "")
+        
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
-        }
+    func testNormal() {
+        
+        assert(Version(major: 0, minor: 2, patch: 3) == "0.2.3")
+        
+        assert(Version(major: 0, minor: 2, patch: 3) == "0.2.3.32")
+        
+    }
+    
+    func testWrong() {
+        
+        assert(Version.empty == "gjre")
+        
+        assert(Version(major: 12, minor: 0, patch: 0) == "12")
+        
+        assert(Version(major: 0, minor: 3, patch: 0) == "g.3")
+        
+        assert(Version(major: 0, minor: 3, patch: 0) >= "g.g.3")
+        
+        assert(Version(major: 0, minor: 3, patch: 0) >= ".g.3")
+        
+        assert(Version(major: 0, minor: 3, patch: 0) == ".3")
+        
+        assert(Version(major: 0, minor: 0, patch: 3) == "..3")
+        
+        assert(Version(major: 0, minor: 0, patch: 3) == "..3..")
+        
+        assert(Version(major: 0, minor: 1, patch: 0) == ".1.")
+    }
+    
+    
+    func testBigger() {
+        assert(Version(major: 1, minor: 2, patch: 3) >= "0.2.3")
+        
+        assert(Version(major: 0, minor: 2, patch: 3) <= "0.2.3.32")
+        
+        
+        assert(Version(major: 1, minor: 2, patch: 3) >= "0.25123.3342")
+        
+        assert(Version(major: 1, minor: 2, patch: 3) <= "1.25123.3342")
+        
+        assert(Version(major: 1, minor: 2, patch: 3) <= "1.2.3342")
+        
+        assert(Version(major: 1, minor: 2, patch: 3) <= "1.2.3")
     }
     
 }

@@ -1,11 +1,15 @@
 use_frameworks!
 
 target 'XVersion_Example' do
+  
+  pod 'Anvil', :git => 'git@114.242.31.175:wangzhichen/iOS_GINetworking.git', :branch => 'DCPay-Hosting'
+  
   pod 'XVersion', :path => '../'
+  
+  pod 'ReactiveCocoa'
 
   target 'XVersion_Tests' do
     inherit! :search_paths
-
-    
   end
+  
 end

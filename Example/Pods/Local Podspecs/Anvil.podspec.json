@@ -1,0 +1,33 @@
+{
+  "name": "Anvil",
+  "version": "0.3.3",
+  "summary": "A short description of GINetworking.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Rex/GINetworking",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Rex": "rex_wzc@163.com"
+  },
+  "source": {
+    "git": "git@114.242.31.175:wangzhichen/iOS_GINetworking.git",
+    "tag": "0.3.3"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "default_subspecs": "Core",
+  "dependencies": {
+    "Moya/ReactiveSwift": [
+      "14.0.0-beta.5"
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Anvil/Core/**/*"
+    }
+  ]
+}
