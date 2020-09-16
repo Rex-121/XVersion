@@ -1,0 +1,16 @@
+before_script:
+  - TARGET='XVersion'
+
+Building:
+  stage: build
+  tag: version
+  script:
+    - xcodebuild test -workspace ${TARGET}.xcworkspace -scheme ${TARGET} -sdk iphonesimulator13.7 -destination 'platform=iOS Simulator,name=iPhone 11' ONLY_ACTIVE_ARCH=NO -quiet
+
+
+Testing:
+  stage: test
+  tag: version
+  script:
+    - xcodebuild test -workspace ${TARGET}.xcworkspace -scheme ${TARGET}-Example -destination 'platform=iOS Simulator,name=iPhone 11'  ONLY_ACTIVE_ARCH=NO
+

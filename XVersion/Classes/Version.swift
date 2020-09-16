@@ -41,6 +41,7 @@ public struct Version {
         
     }
 
+    /// 版本 “0.0.0”
     public static var empty: Version { "0.0.0" }
 }
 
