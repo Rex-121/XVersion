@@ -1,12 +1,13 @@
 before_script:
   - TARGET='XVersion'
+  - pod install --project-directory=Example/
 
 Building:
   stage: build
   tags:
     - version
   script:
-    - xcodebuild build -workspace Example/${TARGET}.xcworkspace -scheme ${TARGET} -destination 'platform=iOS Simulator,OS=latest,name=iPhone 11' ONLY_ACTIVE_ARCH=NO -quiet
+    - xcodebuild build -workspace Example/${TARGET}.xcworkspace -scheme ${TARGET}-Example -destination 'platform=iOS Simulator,OS=latest,name=iPhone 11' ONLY_ACTIVE_ARCH=NO -quiet
 
 
 Testing:
@@ -14,6 +15,5 @@ Testing:
   tags:
     - version
   script:
-    - pod install --project-directory=Example/
     - xcodebuild test -workspace Example/${TARGET}.xcworkspace -scheme ${TARGET}-Example -destination 'platform=iOS Simulator,OS=latest,name=iPhone 11'  ONLY_ACTIVE_ARCH=NO
 
