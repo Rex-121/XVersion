@@ -2,9 +2,9 @@ use_frameworks!
 
 target 'XVersion_Example' do
   
-  pod 'Anvil', :git => 'git@114.242.31.175:wangzhichen/iOS_GINetworking.git', :branch => 'DCPay-Hosting'
+  pod 'Anvil', :git => 'git@125.35.104.146:wangzhichen/iOS_GINetworking.git', :branch => 'DCPay-Hosting'
   
-  pod 'XVersion', :path => '../'#:git => 'git@114.242.31.175:wangzhichen/XVersion.git', :tag => '0.1.0'
+  pod 'XVersion', :path => '../'#:git => 'git@125.35.104.146:wangzhichen/XVersion.git', :tag => '0.1.0'
   
   pod 'ReactiveCocoa'
 
