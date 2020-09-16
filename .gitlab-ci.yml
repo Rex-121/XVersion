@@ -1,5 +1,6 @@
 before_script:
   - TARGET='XVersion'
+  - export LANG=en_US.UTF-8
   - pod install --project-directory=Example/
 
 Building:
